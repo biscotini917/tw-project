@@ -1,3 +1,5 @@
+'use strict';
+
 const _ = require('lodash');
 let data = [];
 
@@ -6,7 +8,7 @@ function add (name, content) {
 }
 
 function list () {
-  return _.cloneDeep(data);
+  return _.cloneDeep(data); // totally diff content and data
 }
 
 function find (properties) {
@@ -38,3 +40,7 @@ const getFakeTweet = function() {
 for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
+
+console.log(data);
+add('bruce', "i love programming");
+console.log(data);
